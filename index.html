@@ -1,0 +1,223 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Markies Furniture & Timbers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Back to Top Button -->
+  <button onclick="topFunction()" id="backToTop" title="Go to top">↑</button>
+  <script>
+    // Get the button
+    let mybutton = document.getElementById("backToTop");
+
+    // When user scrolls down 200px from the top, show the button
+    window.onscroll = function() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    };
+
+    // Scroll back to top when clicked
+    function topFunction() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  </script>
+
+  <header>
+    <h1>Markies Furniture & Timbers</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      At Markies Timbers, we specialize in supplying high-quality timber products including pine,
+      cypress, bluegum, and treated poles. Whether you're building, fencing, roofing, or crafting
+      furniture, we are committed to delivering strong, durable, and affordable timber tailored to
+      your needs.
+    </p>
+  </section>
+
+  <section id="products">
+    <h2>Our Products</h2>
+
+    <!-- Products Menu -->
+    <div class="products-menu">
+      <a href="#timber">Timber</a>
+      <a href="#Beds">Beds</a>
+      <a href="#Sofa">Sofas</a>
+    </div>
+
+    <div class="product-grid">
+
+      <div id="timber" class="product">
+        <h3>Wood Timber (Cypress, Bluegum & Pine)</h3>
+        <div class="product-grid">
+
+          <div class="card">
+            <img src="timber1.jpeg" alt="Bluegum">
+            <h4>Bluegum Timber</h4>
+            <ul>
+              <li>2x2 – from KSh 20 per ft</li>
+              <li>4x2 – from KSh 40 per ft</li>
+              <li>6x2 – from KSh 65 per ft</li>
+              <a class="order-button"
+                href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+                target="_blank">Order Now</a>
+            </ul>
+          </div>
+
+          <div class="card">
+            <img src="timber2.jpeg" alt="Pine">
+            <h4>Pine Timber</h4>
+            <ul>
+              <li>2x2 – from KSh 25 per ft</li>
+              <li>4x2 – from KSh 50 per ft</li>
+              <li>6x2 – from KSh 75 per ft</li>
+              <a class="order-button"
+                href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+                target="_blank">Order Now</a>
+            </ul>
+          </div>
+
+          <div class="card">
+            <img src="timber.jpeg" alt="Cypress">
+            <h4>Cypress Timber</h4>
+            <ul>
+              <li>2x2 – from KSh 30 per ft</li>
+              <li>4x2 – from KSh 60 per ft</li>
+              <li>6x2 – from KSh 90 per ft</li>
+              <a class="order-button"
+                href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+                target="_blank">Order Now</a>
+            </ul>
+          </div>
+        </div>
+
+        <a class="order-button"
+          href="https://wa.me/254769360886?text=Hello%20Markies%2C%20I%20want%20to%20order%20timber"
+          target="_blank">Order Timber on WhatsApp</a>
+      </div>
+
+      <div id="furniture" class="product">
+        <h3>Our Furniture</h3>
+        <div class="product-grid">
+
+          <!-- Beds -->
+          <div id="Beds" class="product"></div>
+          <div class="card">
+            <img src="bed1.jpeg" alt="Wooden bed">
+            <h4>Wooden Bed</h4>
+            <p>KSh 110,000</p>
+            <a class="order-button"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              target="_blank">Order Now</a>
+          </div>
+
+          <div class="card">
+            <img src="bed2.jpg" alt="Wooden bed">
+            <h4>Wooden Bed</h4>
+            <p>KSh 70,000</p>
+            <a class="order-button"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              target="_blank">Order Now</a>
+          </div>
+
+          <div class="card">
+            <img src="bed3.jpg" alt="Wooden bed">
+            <h4>Wooden Bed</h4>
+            <p>KSh 50,000</p>
+            <a class="order-button"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              target="_blank">Order Now</a>
+          </div>
+
+          <div class="card">
+            <img src="bed4.jpg" alt="Wooden bed">
+            <h4>Wooden Bed</h4>
+            <p>KSh 110,000</p>
+            <a class="order-button"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              target="_blank">Order Now</a>
+          </div>
+
+          <div class="card">
+            <img src="bed5.jpg" alt="Wooden bed">
+            <h4>Wooden Bed</h4>
+            <p>KSh 50,000</p>
+            <a class="order-button"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              target="_blank">Order Now</a>
+          </div>
+
+          <div class="card">
+            <img src="bed6.jpeg" alt="Wooden bed">
+            <h4>Wooden Bed</h4>
+            <p>KSh 110,000</p>
+            <a class="order-button"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              target="_blank">Order Now</a>
+          </div>
+
+          <div class="card">
+            <img src="bed7.jpeg" alt="Wooden bed">
+            <h4>Wooden Bed</h4>
+            <p>KSh 90,000</p>
+            <a class="order-button"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              target="_blank">Order Now</a>
+          </div>
+
+          <!-- Double Decker -->
+          <div id="Double Decker" class="product"></div>
+          <div class="card">
+            <img src="double decker.jpg" alt="Double Decker Bed">
+            <h4>Double Decker Bed</h4>
+            <p>KSh 40,000</p>
+            <a class="order-button"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              target="_blank">Order Now</a>
+          </div>
+
+          <!-- Sofa -->
+          <div id="Sofa" class="product"></div>
+          <div class="card">
+            <img src="3 seat.jpg" alt="Sofa Set">
+            <h4>Sofa Set</h4>
+            <p>KSh 30,000</p>
+            <a class="order-button"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              target="_blank">Order Now</a>
+          </div>
+        </div>
+
+        <a class="order-button"
+          href="https://wa.me/254769360886?text=Hello%20Markies%2C%20I%27m%20interested%20in%20your%20furniture"
+          target="_blank">Order Furniture on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Phone:</strong> <a href="tel:+254769360886">+254769360886</a></p>
+    <p><strong>Email:</strong> <a href="mailto:markiesenterprise@gmail.com">markiesenterprise@gmail.com</a></p>
+    <a class="order-button"
+      href="https://wa.me/254769360886?text=Hello%20Markies%2C%20I%27m%20interested%20in%20your%20products"
+      target="_blank">Message Us on WhatsApp</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Markies Timbers. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
