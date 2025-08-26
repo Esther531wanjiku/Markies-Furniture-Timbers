@@ -3,16 +3,48 @@
   <meta charset="UTF-8">
   <title>Markies Furniture & Timbers</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Lightbox background */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    /* Lightbox image */
+    .lightbox img {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    /* Close button */
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Back to Top Button -->
   <button onclick="topFunction()" id="backToTop" title="Go to top">↑</button>
   <script>
-    // Get the button
+    // Back to top
     let mybutton = document.getElementById("backToTop");
-
-    // When user scrolls down 200px from the top, show the button
     window.onscroll = function() {
       if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
         mybutton.style.display = "block";
@@ -20,10 +52,19 @@
         mybutton.style.display = "none";
       }
     };
-
-    // Scroll back to top when clicked
     function topFunction() {
       window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    // Lightbox open
+    function openLightbox(src) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").style.display = "block";
+    }
+
+    // Lightbox close
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
     }
   </script>
 
@@ -63,48 +104,44 @@
         <div class="product-grid">
 
           <div class="card">
-            <img src="timber1.jpeg" alt="Bluegum">
+            <img src="timber1.jpeg" alt="Bluegum" onclick="openLightbox(this.src)">
             <h4>Bluegum Timber</h4>
             <ul>
               <li>2x2 – from KSh 20 per ft</li>
               <li>4x2 – from KSh 40 per ft</li>
               <li>6x2 – from KSh 65 per ft</li>
               <a class="order-button"
-                href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+                href="https://wa.me/254769360886?text=I%20want%20to%20order%20Bluegum%20Timber"
                 target="_blank">Order Now</a>
             </ul>
           </div>
 
           <div class="card">
-            <img src="timber2.jpeg" alt="Pine">
+            <img src="timber2.jpeg" alt="Pine" onclick="openLightbox(this.src)">
             <h4>Pine Timber</h4>
             <ul>
               <li>2x2 – from KSh 25 per ft</li>
               <li>4x2 – from KSh 50 per ft</li>
               <li>6x2 – from KSh 75 per ft</li>
               <a class="order-button"
-                href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+                href="https://wa.me/254769360886?text=I%20want%20to%20order%20Pine%20Timber"
                 target="_blank">Order Now</a>
             </ul>
           </div>
 
           <div class="card">
-            <img src="timber.jpeg" alt="Cypress">
+            <img src="timber.jpeg" alt="Cypress" onclick="openLightbox(this.src)">
             <h4>Cypress Timber</h4>
             <ul>
               <li>2x2 – from KSh 30 per ft</li>
               <li>4x2 – from KSh 60 per ft</li>
               <li>6x2 – from KSh 90 per ft</li>
               <a class="order-button"
-                href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+                href="https://wa.me/254769360886?text=I%20want%20to%20order%20Cypress%20Timber"
                 target="_blank">Order Now</a>
             </ul>
           </div>
         </div>
-
-        <a class="order-button"
-          href="https://wa.me/254769360886?text=Hello%20Markies%2C%20I%20want%20to%20order%20timber"
-          target="_blank">Order Timber on WhatsApp</a>
       </div>
 
       <div id="furniture" class="product">
@@ -114,94 +151,89 @@
           <!-- Beds -->
           <div id="Beds" class="product"></div>
           <div class="card">
-            <img src="bed1.jpeg" alt="Wooden bed">
+            <img src="bed1.jpeg" alt="Wooden bed" onclick="openLightbox(this.src)">
             <h4>Wooden Bed</h4>
             <p>KSh 110,000</p>
             <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Wooden%20Bed%20(KSh%20110,000)"
               target="_blank">Order Now</a>
           </div>
 
           <div class="card">
-            <img src="bed2.jpg" alt="Wooden bed">
+            <img src="bed2.jpg" alt="Wooden bed" onclick="openLightbox(this.src)">
             <h4>Wooden Bed</h4>
             <p>KSh 70,000</p>
             <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Wooden%20Bed%20(KSh%2070,000)"
               target="_blank">Order Now</a>
           </div>
 
           <div class="card">
-            <img src="bed3.jpg" alt="Wooden bed">
+            <img src="bed3.jpg" alt="Wooden bed" onclick="openLightbox(this.src)">
             <h4>Wooden Bed</h4>
             <p>KSh 50,000</p>
             <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Wooden%20Bed%20(KSh%2050,000)"
               target="_blank">Order Now</a>
           </div>
 
           <div class="card">
-            <img src="bed4.jpg" alt="Wooden bed">
+            <img src="bed4.jpg" alt="Wooden bed" onclick="openLightbox(this.src)">
             <h4>Wooden Bed</h4>
             <p>KSh 110,000</p>
             <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Wooden%20Bed%20(KSh%20110,000)"
               target="_blank">Order Now</a>
           </div>
 
           <div class="card">
-            <img src="bed5.jpg" alt="Wooden bed">
+            <img src="bed5.jpg" alt="Wooden bed" onclick="openLightbox(this.src)">
             <h4>Wooden Bed</h4>
             <p>KSh 50,000</p>
             <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Wooden%20Bed%20(KSh%2050,000)"
               target="_blank">Order Now</a>
           </div>
 
           <div class="card">
-            <img src="bed6.jpeg" alt="Wooden bed">
+            <img src="bed6.jpeg" alt="Wooden bed" onclick="openLightbox(this.src)">
             <h4>Wooden Bed</h4>
             <p>KSh 110,000</p>
             <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Wooden%20Bed%20(KSh%20110,000)"
               target="_blank">Order Now</a>
           </div>
 
           <div class="card">
-            <img src="bed7.jpeg" alt="Wooden bed">
+            <img src="bed7.jpeg" alt="Wooden bed" onclick="openLightbox(this.src)">
             <h4>Wooden Bed</h4>
             <p>KSh 90,000</p>
             <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Wooden%20Bed%20(KSh%2090,000)"
               target="_blank">Order Now</a>
           </div>
 
           <!-- Double Decker -->
-          <div id="Double Decker" class="product"></div>
           <div class="card">
-            <img src="double decker.jpg" alt="Double Decker Bed">
+            <img src="double decker.jpg" alt="Double Decker Bed" onclick="openLightbox(this.src)">
             <h4>Double Decker Bed</h4>
             <p>KSh 40,000</p>
             <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Double%20Decker%20Bed%20(KSh%2040,000)"
               target="_blank">Order Now</a>
           </div>
 
           <!-- Sofa -->
           <div id="Sofa" class="product"></div>
           <div class="card">
-            <img src="3 seat.jpg" alt="Sofa Set">
+            <img src="3 seat.jpg" alt="Sofa Set" onclick="openLightbox(this.src)">
             <h4>Sofa Set</h4>
             <p>KSh 30,000</p>
             <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20this%20Wooden%20Bed%20(KSh%20110,000)"
+              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Sofa%20Set%20(KSh%2030,000)"
               target="_blank">Order Now</a>
           </div>
         </div>
-
-        <a class="order-button"
-          href="https://wa.me/254769360886?text=Hello%20Markies%2C%20I%27m%20interested%20in%20your%20furniture"
-          target="_blank">Order Furniture on WhatsApp</a>
       </div>
     </div>
   </section>
@@ -219,5 +251,10 @@
     <p>&copy; 2025 Markies Timbers. All rights reserved.</p>
   </footer>
 
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="">
+  </div>
 </body>
 </html>
