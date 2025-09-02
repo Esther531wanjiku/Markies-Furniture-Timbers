@@ -1,73 +1,76 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Markies Furniture & Timbers</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Lightbox background */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      padding-top: 60px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.9);
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    .hero {
+  background: url('header-bg.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: white;
+}
 
-    /* Lightbox image */
-    .lightbox img {
-      margin: auto;
-      display: block;
-      max-width: 80%;
-      max-height: 80%;
-      border-radius: 10px;
-    }
+.hero .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 15px;
+}
 
-    /* Close button */
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 45px;
-      color: #fff;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.hero h1 {
+  font-size: 3.5rem;
+  font-family: 'Georgia', serif;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.hero nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.hero nav a:hover {
+  color: #f1c40f;
+}
+
+    section { padding: 20px; }
+    h2 { margin-top: 0; }
+
+    .product-grid { display: flex; flex-wrap: wrap; gap: 20px; }
+    .product { border: 1px solid #ddd; border-radius: 10px; padding: 15px; text-align: center; background: #f9f9f9; flex: 1 1 300px; }
+
+    .gallery img { width: 100px; height: auto; margin: 5px; cursor: pointer; border-radius: 8px; transition: transform 0.3s; }
+    .gallery img:hover { transform: scale(1.05); box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+
+    .order-button { display: inline-block; margin-top: 10px; padding: 10px 15px; background: #2e7d32; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
+    .order-button:hover { background: #1b5e20; }
+
+    /* Lightbox */
+    .lightbox { display: none; position: fixed; z-index: 1000; padding: 20px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background: rgba(0,0,0,0.9); }
+    .lightbox img { margin: auto; display: block; max-width: 90%; max-height: 80vh; border-radius: 10px; }
+    .close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; }
   </style>
 </head>
 <body>
 
-  <!-- Back to Top Button -->
-  <button onclick="topFunction()" id="backToTop" title="Go to top">↑</button>
-  <script>
-    // Back to top
-    let mybutton = document.getElementById("backToTop");
-    window.onscroll = function() {
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    };
-    function topFunction() {
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    }
-
-    // Lightbox open
-    function openLightbox(src) {
-      document.getElementById("lightbox-img").src = src;
-      document.getElementById("lightbox").style.display = "block";
-    }
-
-    // Lightbox close
-    function closeLightbox() {
-      document.getElementById("lightbox").style.display = "none";
-    }
-  </script>
-
+  <!-- HEADER -->
   <header>
     <h1>Markies Furniture & Timbers</h1>
     <nav>
@@ -77,29 +80,36 @@
     </nav>
   </header>
 
+  <!-- ABOUT -->
   <section id="about">
     <h2>About Us</h2>
-    <p>
-      At Markies Timbers, we specialize in supplying high-quality timber products including pine,
-      cypress, bluegum, and treated poles. Whether you're building, fencing, roofing, or crafting
-      furniture, we are committed to delivering strong, durable, and affordable timber tailored to
-      your needs.
-    </p>
+    <p>At Markies Timbers, we specialize in supplying high-quality timber and furniture products including coffee tables, beds, sofas, wardrobes, shoe racks, and TV stands. Whether you're furnishing your home or business, we deliver durable and stylish furniture at affordable prices.</p>
   </section>
 
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="">
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById("lightbox").style.display = "block";
+      document.getElementById("lightbox-img").src = src;
+    }
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
+
+  <!-- PRODUCTS -->
   <section id="products">
     <h2>Our Products</h2>
 
-    <!-- Products Menu -->
-    <div class="products-menu">
-      <a href="#timber">Timber</a>
-      <a href="#Beds">Beds</a>
-      <a href="#Sofa">Sofas</a>
-    </div>
-
     <div class="product-grid">
 
-      <div id="timber" class="product">
+      
+ <div id="timber" class="product">
         <h3>Wood Timber (Cypress, Bluegum & Pine)</h3>
         <div class="product-grid">
 
@@ -143,108 +153,138 @@
           </div>
         </div>
       </div>
-
-      <div id="furniture" class="product">
-        <h3>Our Furniture</h3>
-        <div class="product-grid">
-
-          <!-- Beds -->
-          <div id="Beds" class="product"></div>
-          <div class="card">
-            <img src="bed1.jpeg" alt="Wooden bed" onclick="openLightbox(this.src)">
-            <h4>Wooden Bed</h4>
-            <p>KSh 110,000</p>
-            <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Wooden%20Bed%20(KSh%20110,000)"
-              target="_blank">Order Now</a>
-          </div>
-
-          <div class="card">
-            <img src="bed2.jpg" alt="Wooden bed" onclick="openLightbox(this.src)">
-            <h4>Wooden Bed</h4>
-            <p>KSh 70,000</p>
-            <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Wooden%20Bed%20(KSh%2070,000)"
-              target="_blank">Order Now</a>
-          </div>
-
-          <div class="card">
-            <img src="bed3.jpg" alt="Wooden bed" onclick="openLightbox(this.src)">
-            <h4>Wooden Bed</h4>
-            <p>KSh 50,000</p>
-            <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Wooden%20Bed%20(KSh%2050,000)"
-              target="_blank">Order Now</a>
-          </div>
-
-          <div class="card">
-            <img src="bed4.jpg" alt="Wooden bed" onclick="openLightbox(this.src)">
-            <h4>Wooden Bed</h4>
-            <p>KSh 110,000</p>
-            <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Wooden%20Bed%20(KSh%20110,000)"
-              target="_blank">Order Now</a>
-          </div>
-
-          <div class="card">
-            <img src="bed5.jpg" alt="Wooden bed" onclick="openLightbox(this.src)">
-            <h4>Wooden Bed</h4>
-            <p>KSh 50,000</p>
-            <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Wooden%20Bed%20(KSh%2050,000)"
-              target="_blank">Order Now</a>
-          </div>
-
-          <div class="card">
-            <img src="bed6.jpeg" alt="Wooden bed" onclick="openLightbox(this.src)">
-            <h4>Wooden Bed</h4>
-            <p>KSh 110,000</p>
-            <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Wooden%20Bed%20(KSh%20110,000)"
-              target="_blank">Order Now</a>
-          </div>
-
-          <div class="card">
-            <img src="bed7.jpeg" alt="Wooden bed" onclick="openLightbox(this.src)">
-            <h4>Wooden Bed</h4>
-            <p>KSh 90,000</p>
-            <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Wooden%20Bed%20(KSh%2090,000)"
-              target="_blank">Order Now</a>
-          </div>
-
-          <!-- Double Decker -->
-          <div class="card">
-            <img src="double decker.jpg" alt="Double Decker Bed" onclick="openLightbox(this.src)">
-            <h4>Double Decker Bed</h4>
-            <p>KSh 40,000</p>
-            <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Double%20Decker%20Bed%20(KSh%2040,000)"
-              target="_blank">Order Now</a>
-          </div>
-
-          <!-- Sofa -->
-          <div id="Sofa" class="product"></div>
-          <div class="card">
-            <img src="3 seat.jpg" alt="Sofa Set" onclick="openLightbox(this.src)">
-            <h4>Sofa Set</h4>
-            <p>KSh 30,000</p>
-            <a class="order-button"
-              href="https://wa.me/254769360886?text=I%20want%20to%20order%20Sofa%20Set%20(KSh%2030,000)"
-              target="_blank">Order Now</a>
-          </div>
-        </div>
-      </div>
+      <!-- Coffee Tables -->
+<div class="product">
+  <h3>Coffee Tables</h3>
+  <div class="gallery">
+    <div>
+      <img src="coffee-table/coffee1.jpg" alt="Coffee Table 1" onclick="openLightbox(this.src)">
+      <p><strong>Price:</strong> KSh 20,000</p>
     </div>
+    <div>
+      <img src="coffee-table/coffee2.jpg" alt="Coffee Table 2" onclick="openLightbox(this.src)">
+      <p><strong>Price:</strong> KSh 70,000</p>
+    </div>
+    <div>
+      <img src="coffee-table/coffee3.jpg" alt="Coffee Table 3" onclick="openLightbox(this.src)">
+      <p><strong>Price:</strong> KSh 40,000</p>
+    </div>
+    <div>
+      <img src="coffee-table/coffee4.jpg" alt="Coffee Table 4" onclick="openLightbox(this.src)">
+      <p><strong>Price:</strong> KSh 25,000</p>
+    </div>
+    <div>
+      <img src="coffee-table/coffee5.jpg" alt="Coffee Table 5" onclick="openLightbox(this.src)">
+      <p><strong>Price:</strong> KSh 20,000</p>
+    </div>
+    <!-- Lightbox Container -->
+<div id="lightbox" class="lightbox">
+  <span class="close" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img">
+</div>
+
+<script>
+  // Open lightbox
+  function openLightbox(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+  }
+
+  // Close lightbox
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+
+  </div>
+  <a class="order-button" 
+     href="https://wa.me/254769360886?text=I%20want%20a%20coffee%20table" 
+     target="_blank">Order Now</a>
+</div>
+
   </section>
 
+
+      <!-- Cypress & Pine Beds -->
+      <div class="product">
+        <h3>Cypress & Pine Beds</h3>
+        <div class="gallery">
+          <img src="cyprus-pine-bed/1.jpg" alt="Cypress Pine Bed 1" onclick="openLightbox(this)">
+          <img src="cyprus-pine-bed/2.jpg" alt="Cypress Pine Bed 2" onclick="openLightbox(this)">
+        </div>
+        <a class="order-button" href="https://wa.me/254769360886?text=I%20want%20a%20Cypress%20or%20Pine%20Bed" target="_blank">Order Now</a>
+      </div>
+
+      <!-- Fabric Beds -->
+      <div class="product">
+        <h3>Fabric Beds</h3>
+        <div class="gallery">
+          <img src="fabric-bed/1.jpg" alt="Fabric Bed 1" onclick="openLightbox(this)">
+          <img src="fabric-bed/2.jpg" alt="Fabric Bed 2" onclick="openLightbox(this)">
+        </div>
+        <a class="order-button" href="https://wa.me/254769360886?text=I%20want%20a%20fabric%20bed" target="_blank">Order Now</a>
+      </div>
+
+      <!-- Mahogany Beds -->
+      <div class="product">
+        <h3>Mahogany Beds</h3>
+        <div class="gallery">
+          <img src="mahogany-bed/1.jpg" alt="Mahogany Bed 1" onclick="openLightbox(this)">
+          <img src="mahogany-bed/2.jpg" alt="Mahogany Bed 2" onclick="openLightbox(this)">
+        </div>
+        <a class="order-button" href="https://wa.me/254769360886?text=I%20want%20a%20mahogany%20bed" target="_blank">Order Now</a>
+      </div>
+
+      <!-- Dining Tables -->
+      <div class="product">
+        <h3>Pure Mahogany Dining</h3>
+        <div class="gallery">
+          <img src="dining/1.jpg" alt="Dining Table 1" onclick="openLightbox(this)">
+          <img src="dining/2.jpg" alt="Dining Table 2" onclick="openLightbox(this)">
+        </div>
+        <a class="order-button" href="https://wa.me/254769360886?text=I%20want%20a%20dining%20table" target="_blank">Order Now</a>
+      </div>
+
+      <!-- Wardrobe & Shoerack -->
+      <div class="product">
+        <h3>Wardrobes & Shoe Racks</h3>
+        <div class="gallery">
+          <img src="wardrobe-shoerack/1.jpg" alt="Wardrobe 1" onclick="openLightbox(this)">
+          <img src="wardrobe-shoerack/2.jpg" alt="Shoe Rack 1" onclick="openLightbox(this)">
+        </div>
+        <a class="order-button" href="https://wa.me/254769360886?text=I%20want%20a%20wardrobe%20or%20shoerack" target="_blank">Order Now</a>
+      </div>
+
+      <!-- Sofas -->
+      <div class="product">
+        <h3>Sofa Sets</h3>
+        <div class="gallery">
+          <img src="sofa/1.jpg" alt="Sofa 1" onclick="openLightbox(this)">
+          <img src="sofa/2.jpg" alt="Sofa 2" onclick="openLightbox(this)">
+        </div>
+        <a class="order-button" href="https://wa.me/254769360886?text=I%20want%20a%20sofa%20set" target="_blank">Order Now</a>
+      </div>
+
+      <!-- TV Stand -->
+      <div class="product">
+        <h3>TV Stands</h3>
+        <div class="gallery">
+          <img src="tv-stand/1.jpg" alt="TV Stand 1" onclick="openLightbox(this)">
+          <img src="tv-stand/2.jpg" alt="TV Stand 2" onclick="openLightbox(this)">
+        </div>
+        <a class="order-button" href="https://wa.me/254769360886?text=I%20want%20a%20TV%20stand" target="_blank">Order Now</a>
+      </div>
+
+    </div>
+  </section>
+<div class="product-grid">
+
+      
   <section id="contact">
     <h2>Contact Us</h2>
     <p><strong>Phone:</strong> <a href="tel:+254769360886">+254769360886</a></p>
     <p><strong>Email:</strong> <a href="mailto:markiesenterprise@gmail.com">markiesenterprise@gmail.com</a></p>
-    <a class="order-button"
-      href="https://wa.me/254769360886?text=Hello%20Markies%2C%20I%27m%20interested%20in%20your%20products"
-      target="_blank">Message Us on WhatsApp</a>
+    <a class="order-button" href="https://wa.me/254769360886?text=Hello%20Markies%2C%20I%27m%20interested%20in%20your%20products" target="_blank">Message Us on WhatsApp</a>
   </section>
 
   <footer>
@@ -252,9 +292,20 @@
   </footer>
 
   <!-- Lightbox -->
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="close">&times;</span>
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
     <img id="lightbox-img" src="">
   </div>
+
+  <script>
+    function openLightbox(img) {
+      document.getElementById('lightbox').style.display = 'block';
+      document.getElementById('lightbox-img').src = img.src;
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+
 </body>
 </html>
